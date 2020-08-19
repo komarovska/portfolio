@@ -1,0 +1,38 @@
+.header
+  display: flex
+  height: 100px
+  background: #ffffff
+  box-shadow: $standard-box-shadow
+  -moz-box-shadow: $standard-box-shadow
+  -webkit-box-shadow: $standard-box-shadow
+  z-index: 1
+  position: relative
+
+.navItems_container
+  display: flex
+  padding: 0 20px
+  width: 100%
+  justify-content: space-between
+
+.navItem
+  font-family: $main-font
+  color: $dark-grey
+  font-weight: 700
+
+  a
+    line-height: 100px
+    position: relative
+
+  a::after
+    content: ''
+    background-color: $yellow-main
+    transition: width 0.8s
+    width: 0
+    height: 6px
+    position: absolute
+    top: 12px
+    z-index: -1
+    left: -5px
+
+.navItem:hover a::after
+  width: calc(100% + 10px)
