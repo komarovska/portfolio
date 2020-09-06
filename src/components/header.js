@@ -21,11 +21,17 @@ const Header = () => {
             `}
             render={data => (
                     <div className="header">
-                        <div className="navItems_container">
+                        <div className={`burger ${showMenu && 'open'}`} onClick={() => setShowMenu(!showMenu)}>
+                            <div className="burger_line" />
+                            <div className="burger_line" />
+                            <div className="burger_line" />
+                        </div>
+                        <nav className={`navItems_container ${showMenu && 'open'}`}>
+
                             {data.header.navItems.map(item => <div className="navItem">
                                     <Link to={item.href}>{item.label}</Link>
                                 </div>)}
-                            </div>
+                            </nav>
                     </div>
             )}
         />
