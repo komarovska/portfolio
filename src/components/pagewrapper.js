@@ -9,7 +9,6 @@ import "../styles/index.sass";
 import Header from "./header";
 
 const PageWrapper = ({ children }) => {
-    const [showMenu, setShowMenu] = useState(false);
     return (
         <StaticQuery
             query={graphql`
@@ -50,44 +49,6 @@ const PageWrapper = ({ children }) => {
                         seo={data.datoCmsHome.seoMetaTags}
                     />
                     <Header/>
-
-                    {/*<div className="container__sidebar">*/}
-                    {/*    <div className="sidebar">*/}
-                    {/*        <h6 className="sidebar__title">*/}
-                    {/*            <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>*/}
-                    {/*        </h6>*/}
-                    {/*        <div*/}
-                    {/*            className="sidebar__intro"*/}
-                    {/*            dangerouslySetInnerHTML={{*/}
-                    {/*                __html:*/}
-                    {/*                data.datoCmsHome.introTextNode.childMarkdownRemark.html*/}
-                    {/*            }}*/}
-                    {/*        />*/}
-                    {/*        <ul className="sidebar__menu">*/}
-                    {/*            <li>*/}
-                    {/*                <Link to="/">Home</Link>*/}
-                    {/*            </li>*/}
-                    {/*            <li>*/}
-                    {/*                <Link to="/about">About</Link>*/}
-                    {/*            </li>*/}
-                    {/*        </ul>*/}
-                    {/*        <p className="sidebar__social">*/}
-                    {/*            {data.allDatoCmsSocialProfile.edges.map(({ node: profile }) => (*/}
-                    {/*                <a*/}
-                    {/*                    key={profile.profileType}*/}
-                    {/*                    href={profile.url}*/}
-                    {/*                    target="blank"*/}
-                    {/*                    className={`social social--${profile.profileType.toLowerCase()}`}*/}
-                    {/*                >*/}
-                    {/*                    {" "}*/}
-                    {/*                </a>*/}
-                    {/*            ))}*/}
-                    {/*        </p>*/}
-                    {/*        <div className="sidebar__copyright">*/}
-                    {/*            {data.datoCmsHome.copyright}*/}
-                    {/*        </div>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
                     <div className="page-wrapper__body">
                         {children}
                     </div>
