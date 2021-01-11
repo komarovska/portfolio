@@ -44,9 +44,9 @@ const PageWrapper = ({ children }) => {
       `}
             render={data => (
                 <div className='page-wrapper'>
-                    <HelmetDatoCms
-                        favicon={data.datoCmsSite.faviconMetaTags}
-                        seo={data.datoCmsHome.seoMetaTags}
+                    data && <HelmetDatoCms
+                        favicon={data?.datoCmsSite?.faviconMetaTags}
+                        seo={data?.datoCmsHome?.seoMetaTags}
                     />
                     <Header/>
                     <div className="page-wrapper__body">
