@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content, jsx-a11y/anchor-is-valid*/
 
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
+import * as PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
 
