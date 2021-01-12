@@ -1,12 +1,13 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import PageWrapper from "../components/pagewrapper";
-import Stage from "../components/Stage";
+import React from 'react';
+import { graphql } from 'gatsby';
+import PageWrapper from '../components/PageWrapper';
+import Stage from '../components/Stage';
 
 const TestNode = ({ data: { testNode } }) => (
-    <PageWrapper>
-        <Stage />
-    </PageWrapper>
+// const TestNode = () => (
+  <PageWrapper>
+    <Stage />
+  </PageWrapper>
 );
 
 export default TestNode;
