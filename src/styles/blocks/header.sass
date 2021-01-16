@@ -1,12 +1,13 @@
 .header
   display: flex
-  height: 100px
+  min-height: 100px
   background: #ffffff
   box-shadow: $standard-box-shadow
   -moz-box-shadow: $standard-box-shadow
   -webkit-box-shadow: $standard-box-shadow
-  z-index: 1
-  position: relative
+  z-index: 100
+  position: sticky
+  top: 0
 
 .navItems_container
   display: flex
@@ -15,7 +16,7 @@
   justify-content: space-between
 
 .navItem
-  font-family: $main-font
+  font-family: $secondary-font
   color: $dark-grey
   font-weight: 700
 
@@ -25,7 +26,7 @@
 
   a::after
     content: ''
-    background-color: $yellow-main
+    background-color: $accent-color
     transition: width 0.8s
     -webkit-transition: width 0.8s
     -moz-transition: width 0.8s
@@ -42,9 +43,6 @@
 
 
 @media screen and (max-width: $smallBreakpoint)
-  .header
-    background-color: $background-gray
-
   .burger
     position: absolute
     top: 35px
@@ -56,24 +54,36 @@
 
   .burger_line
     height: 2px
-    background-color: #ffffff
     width: 25px
+    background-color: $black
     margin-top: 5px
 
   .navItems_container
-    display: none
+    display: flex
+    padding: 0
+    max-height: 0
+    overflow: hidden
+    flex-direction: column
+    transition: max-height 1s ease-out
+    box-shadow: $dark-box-shadow
+
+  .navItems_container.closed
+    max-height: 0
+    overflow: hidden
+    transition: max-height 1s ease-out
 
   .navItems_container.open
-    display: flex
-    flex-direction: column
-    padding: 0
+    transition: max-height 1s ease-out
+    max-height: 360px
 
   .burger.open
     left: calc(100% - 50px)
     top: 20px
+    display: block
 
     .burger_line
       margin-top: 0
+      background-color: #ffffff
 
     .burger_line:nth-child(2)
       display: none
@@ -87,7 +97,7 @@
       margin-top: -2px
 
   .navItem
-    background-color: $background-gray
+    background-color: $black
     padding-left: 40px
 
     a
@@ -95,7 +105,7 @@
       color: #ffffff
 
     a:hover
-      color: $yellow-main
+      color: $accent-color
 
     a::after
       content: ''
@@ -111,10 +121,10 @@
       z-index: 1
 
   .navItem:hover a
-    color: $yellow-main
+    color: $accent-color
 
   .navItem:hover a::after
     transform: rotate(45deg)
     width: 8px
     height: 8px
-    border-color: $yellow-main
+    border-color: $accent-color

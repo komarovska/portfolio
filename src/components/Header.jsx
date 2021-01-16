@@ -23,16 +23,15 @@ const Header = () => {
         }
       `}
       render={(data) => (
-        <div className="header">
+        <div className="header" onClick={() => setShowMenu(!showMenu)}>
           <div
-            className={`burger ${showMenu && 'open'}`}
-            onClick={() => setShowMenu(!showMenu)}
+            className={`burger ${showMenu ? 'open' : 'closed'}`}
           >
             <div className="burger_line" />
             <div className="burger_line" />
             <div className="burger_line" />
           </div>
-          <nav className={`navItems_container ${showMenu && 'open'}`}>
+          <nav className={`navItems_container ${showMenu ? 'open' : 'closed'}`}>
             {data.header.navItems.map((item) => (
               <div className="navItem">
                 <Link to={item.href}>{item.label}</Link>

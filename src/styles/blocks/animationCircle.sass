@@ -1,5 +1,5 @@
 .animation-container
-  width: 60%
+  width: 65%
   height: 700px
   display: flex
   margin-left: auto
@@ -58,18 +58,17 @@
 
 .headline-container
   position: absolute
-  top: 170px
-  left: 350px
-  width: 300px
+  top: 200px
+  left: 340px
+  max-width: 450px
   display: flex
   flex-direction: column
 
 .headline
   font-family: $secondary-font
-  font-weight: 600
+  font-weight: 900
   font-size: 52px
   line-height: 1.1
-  font-style: italic
   z-index: 3
   mix-blend-mode: difference
   color: #ffffff
@@ -136,6 +135,26 @@
     100%
       transform: translateY(0px)
 
+@media screen and (max-width: $largeBreakpoint)
+  .animation-container
+    width: 75%
+
+  .headline-container
+    left: 313px
+
+@media screen and (max-width: $mediumBreakpoint)
+  .animation-container
+    width: 85%
+
+  .headline-container
+    left: 325px
+
+  .headline
+    font-size: 48px
+
 @media screen and (max-width: $smallBreakpoint)
   .animation-container
     width: 100%
+
+  .headline-container
+    left: 25px
