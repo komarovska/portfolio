@@ -20,6 +20,10 @@ const AnimationCircle = () => (
         </div>
       </span>
     </div>
+    <div className="stage_description">
+      I am a devoted software engineer with solid experience and real passion towards programming.
+      I can become a member of your development team as well as help you to make your dream project live.
+    </div>
   </div>
 );
 

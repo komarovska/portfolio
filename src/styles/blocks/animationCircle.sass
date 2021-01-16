@@ -74,6 +74,15 @@
   color: #ffffff
   background: #000000
 
+.stage_description
+  position: absolute
+  font-family: $secondary-font
+  color: $black
+  left: 500px
+  top: 400px
+  max-width: 25%
+  font-size: 16px
+
 .rectangle
   background: black
   width: 50px
@@ -152,9 +161,23 @@
   .headline
     font-size: 48px
 
+  .stage_description
+    left: 425px
+    top: 415px
+
 @media screen and (max-width: $smallBreakpoint)
   .animation-container
     width: 100%
 
   .headline-container
     left: 25px
+
+  .stage_description
+    color: white
+    left: 30px
+    top: 420px
+    min-width: 90%
+    font-size: 16px
+    mix-blend-mode: difference
+    background: black
+    z-index: 2
