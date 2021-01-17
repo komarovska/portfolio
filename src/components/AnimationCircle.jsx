@@ -1,8 +1,9 @@
 import React from 'react';
+import * as PropTypes from 'prop-types'
 
 import '../styles/index.sass';
 
-const AnimationCircle = () => (
+const AnimationCircle = (props) => (
   <div className="animation-container">
     <div className="circle outer-circle">
       <div className="animation-circle-orbit outer">
@@ -11,7 +12,7 @@ const AnimationCircle = () => (
     </div>
     <div className="circle ellipse" />
     <div className="headline-container">
-      <div className="headline">Viktoriia Komarovska, frontend developer</div>
+      <div className="headline">{props.content.headline}</div>
     </div>
     <div className="viewport">
       <span className="moveX">
@@ -21,8 +22,7 @@ const AnimationCircle = () => (
       </span>
     </div>
     <div className="stage_description">
-      I am a devoted software engineer with solid experience and real passion towards programming.
-      I can become a member of your development team as well as help you to make your dream project live.
+      {props.content.description}
     </div>
     <div className="dot dot-animated dot-large" />
     <div className="dot dot-animated dot-small" />
@@ -31,3 +31,10 @@ const AnimationCircle = () => (
 );
 
 export default AnimationCircle;
+
+AnimationCircle.propTypes = {
+  content: {
+    headline: PropTypes.string,
+    description: PropTypes.string,
+  }
+};
