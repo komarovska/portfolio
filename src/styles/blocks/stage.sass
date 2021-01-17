@@ -2,3 +2,19 @@
   width: 100%
   display: flex
   overflow-x: hidden
+
+.avatar-container
+  display: flex
+  width: 25%
+  padding-left: 30px
+  margin: auto
+
+@media screen and (max-width: $smallBreakpoint)
+  .stage-container
+    flex-direction: column-reverse
+
+  .avatar-container
+    width: 70%
+    margin: auto
+    padding-bottom: 30px
+    padding-left: 0
