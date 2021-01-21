@@ -1,0 +1,169 @@
+.technologies-section-container
+  height: 100vh
+  background-color: white
+  cursor: none
+  position: relative
+
+  &-cursor
+    background-color: #ffffff
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    position: absolute
+    mix-blend-mode: difference
+    cursor: none
+    z-index: 2
+    transform: translate(50% 50%)
+
+  &-headline
+    font-family: $secondary-font
+    font-weight: bold
+    font-size: 40px
+    width: 100%
+    text-align: center
+    grid-row-start: 1
+    grid-column-start: 2
+    grid-row-end: 2
+    grid-column-end: 5
+    position: relative
+    padding-top: 20px
+    color: $black
+
+.technologies-section
+  display: grid
+  overflow-x: hidden
+  position: relative
+  height: 80%
+  grid-template-rows: 33.3% 33.3% 33.3%
+  grid-template-columns: 20% 20% 20% 20% 20%
+  background-color: white
+
+  &-grid-item
+    width: 100%
+    height: 100%
+    position: relative
+
+    &-2
+      grid-row-start: 2
+      grid-column-start: 4
+      grid-row-end: 3
+      grid-column-end: 5
+
+    &-4
+      grid-row-start: 3
+      grid-column-start: 5
+      grid-row-end: 4
+      grid-column-end: 6
+
+    &-5
+      grid-row-start: 1
+      grid-column-start: 5
+      grid-row-end: 2
+      grid-column-end: 6
+
+    &-8
+      grid-row-start: 3
+      grid-column-start: 1
+      grid-row-end: 4
+      grid-column-end: 2
+
+    &-9
+      grid-row-start: 2
+      grid-column-start: 1
+      grid-row-end: 3
+      grid-column-end: 2
+
+    &-11
+      grid-row-start: 2
+      grid-column-start: 5
+      grid-row-end: 3
+      grid-column-end: 6
+
+    &-12
+      grid-row-start: 3
+      grid-column-start: 2
+      grid-row-end: 4
+      grid-column-end: 3
+
+  &-circle
+    background-color: $black
+    border-radius: 50%
+    color: white
+    font-family: $secondary-font
+    text-align: center
+    font-weight: 100
+    position: absolute
+    transform: scale(1)
+    transition: transform 1s
+
+    &:hover
+      transform: scale(1.15)
+
+    &-1
+      left: 70%
+      top: 10%
+
+    &-2
+      top: -30%
+
+    &-3
+      left: 30%
+
+    &-4
+      left: 30%
+
+    &-5
+      top: 20%
+      left: 10%
+
+    &-6
+      left: 30%
+      top: 20%
+
+    &-7
+      left: 60%
+
+    &-8
+      top: 40%
+      left: 20%
+
+    &-9
+      left: 20%
+      top: 30%
+
+    &-10
+      bottom: 10%
+      right: 10%
+
+    &-11
+      top: 40%
+
+    &-12
+      top: 30%
+      left: 50%
+
+
+    &-large
+      width: 120px
+      height: 120px
+      line-height: 120px
+
+    &-medium
+      width: 100px
+      height: 100px
+      line-height: 100px
+
+    &-small
+      width: 70px
+      height: 70px
+      line-height: 70px
+
+@media screen and (max-width: $smallBreakpoint)
+  .technologies-section
+    height: 200vh
+
+    &-headline
+      grid-row-start: 1
+      grid-column-start: 1
+      grid-row-end: 2
+      grid-column-end: 6
