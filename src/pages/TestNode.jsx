@@ -3,12 +3,14 @@ import { graphql } from 'gatsby';
 import PageWrapper from '../components/PageWrapper';
 import Stage from '../components/Stage';
 import TechnologiesSection from "../components/TechnologiesSection";
+import Projects from "../components/Projects";
 
 const TestNode = ({ data: { testNode } }) => (
 // const TestNode = () => (
   <PageWrapper>
     <Stage />
     <TechnologiesSection />
+    <Projects />
   </PageWrapper>
 );
 

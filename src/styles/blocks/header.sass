@@ -1,13 +1,33 @@
 .header
   display: flex
-  min-height: 100px
-  background: #ffffff
-  box-shadow: $standard-box-shadow
-  -moz-box-shadow: $standard-box-shadow
-  -webkit-box-shadow: $standard-box-shadow
   z-index: 100
   position: sticky
   top: 0
+  cursor: auto !important
+
+  &-stage
+    min-height: 100px
+    background: #ffffff
+    transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
+    line-height: 100px
+    color: $black
+    box-shadow: $standard-box-shadow
+
+  &-technologies
+    min-height: 50px
+    background: #ffffff
+    transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
+    line-height: 50px
+    color: $black
+    box-shadow: $reset-box-shadow
+
+  &-projects
+    min-height: 50px
+    background: $black
+    color: #ffffff !important
+    // transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
+    line-height: 50px
+    box-shadow: $reset-box-shadow
 
 .navItems_container
   display: flex
@@ -17,11 +37,9 @@
 
 .navItem
   font-family: $secondary-font
-  color: $dark-grey
   font-weight: 700
 
   a
-    line-height: 100px
     position: relative
 
   a::after

@@ -3,25 +3,31 @@ jsx-a11y/anchor-has-content
 jsx-a11y/anchor-is-valid
 jsx-a11y/click-events-have-key-events
 jsx-a11y/no-static-element-interactions */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import * as PropTypes from "prop-types";
 
 import "../styles/index.sass";
 
 const TechnologiesSection = () => {
-  const cursor = document.querySelector(
-    ".technologies-section-container-cursor"
-  );
+  const [cursorCoordinates, setCursorCoordinates] = useState({ x: 0, y: 0 });
 
-  if (cursor) {
-    document.addEventListener("mousemove", function (event) {
+  useEffect(() => {
+    const cursor = document.querySelector(
+      ".technologies-section-container-cursor"
+    );
+    console.log(cursor);
+    const createCustomCursor = (event) => {
       const mouseX = event.pageX;
       const mouseY = event.pageY;
+      setCursorCoordinates({ x: mouseX, y: mouseY });
       cursor.style.left = mouseX + "px";
       cursor.style.top = mouseY - 120 + "px";
-    });
-  }
+    };
+    document.addEventListener("mousemove", createCustomCursor);
+    console.log(cursorCoordinates);
+    return document.removeEventListener("mousemove", createCustomCursor);
+  }, [cursorCoordinates]);
 
   return (
     <StaticQuery
