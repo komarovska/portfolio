@@ -1,14 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import PageWrapper from "../components/pagewrapper";
+import Stage from "../components/Stage";
 
 const TestNode = ({ data: { testNode } }) => (
     <PageWrapper>
-      {/*<article className="sheet">*/}
-      {/*  <div className="sheet__inner">*/}
-      {/*    <h1 className="sheet__test__title">{testNode.label}</h1>*/}
-      {/*  </div>*/}
-      {/*</article>*/}
+        <Stage />
     </PageWrapper>
 );
 
