@@ -54,7 +54,7 @@ const Header = () => {
           </div>
           <nav className={`navItems_container ${showMenu ? 'open' : 'closed'}`}>
             {data.header.navItems.map((item) => (
-              <div className="navItem">
+              <div className={`navItem navItem-${position}`}>
                 <Link className={position} to={item.href}>{item.label}</Link>
               </div>
             ))}
