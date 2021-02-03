@@ -11,23 +11,36 @@ import "../styles/index.sass";
 
 const TechnologiesSection = () => {
   const [cursorCoordinates, setCursorCoordinates] = useState({ x: 0, y: 0 });
+  const [mouseCoordinates, setMouseCoordinates] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const cursor = document.querySelector(
-      ".technologies-section-container-cursor"
-    );
-    console.log(cursor);
-    const createCustomCursor = (event) => {
-      const mouseX = event.pageX;
-      const mouseY = event.pageY;
-      setCursorCoordinates({ x: mouseX, y: mouseY });
-      cursor.style.left = mouseX + "px";
-      cursor.style.top = mouseY - 120 + "px";
-    };
-    document.addEventListener("mousemove", createCustomCursor);
-    console.log(cursorCoordinates);
-    return document.removeEventListener("mousemove", createCustomCursor);
-  }, [cursorCoordinates]);
+  // useEffect(() => {
+  //   const cursor = document.querySelector(
+  //     ".technologies-section-container-cursor"
+  //   );
+  //   console.log(cursor);
+  //   let speed = 1;
+  //   const createCustomCursor = (event) => {
+  //     setMouseCoordinates({ x: event.pageX, y: event.pageY })
+  //     let distX = mouseCoordinates.x - cursorCoordinates.x;
+  //     let distY = mouseCoordinates.y - cursorCoordinates.y;
+  //
+  //     setCursorCoordinates({
+  //       x: cursorCoordinates.x + distX * speed,
+  //       y: cursorCoordinates.y + distY * speed,
+  //     });
+  //
+  //     cursor.style.left = cursorCoordinates.x + "px";
+  //     cursor.style.top = cursorCoordinates.y + "px";
+  //     // const mouseX = event.pageX;
+  //     // const mouseY = event.pageY;
+  //     // setCursorCoordinates({ x: mouseX, y: mouseY });
+  //     // cursor.style.left = mouseX + "px";
+  //     // cursor.style.top = mouseY - 120 + "px";
+  //   };
+  //   document.addEventListener("mousemove", (event) => createCustomCursor(event));
+  //   console.log(cursorCoordinates);
+  //   return document.removeEventListener("mousemove", createCustomCursor);
+  // }, [mouseCoordinates]);
 
   return (
     <StaticQuery
@@ -48,7 +61,7 @@ const TechnologiesSection = () => {
       `}
       render={(data) => (
         <section className="technologies-section-container">
-          <div className="technologies-section-container-cursor" />
+          {/*<div className="technologies-section-container-cursor" />*/}
           <div className="technologies-section">
             <div className="technologies-section-container-headline">
               Technologies I use

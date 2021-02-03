@@ -1,7 +1,7 @@
 .technologies-section-container
   height: 100vh
   background-color: white
-  cursor: none
+  // cursor: none
   position: relative
   // cursor: url('/assets/images/black-circle-svg.svg') auto
 
@@ -43,6 +43,7 @@
     width: 100%
     height: 100%
     position: relative
+    cursor: pointer
 
     &-2
       grid-row-start: 2
@@ -193,34 +194,37 @@
       width: 120px
       height: 120px
       line-height: 120px
-      transition: width 500ms linear, height 500ms linear
+      transition: width 400ms linear, height 400ms linear, line-height 400ms linear
 
       &:hover
-       transition: width 500ms linear, height 500ms linear
+       transition: width 400ms linear, height 400ms linear, line-height 400ms linear
        width: 135px
        height: 135px
+       line-height: 135px
 
     &-medium
       width: 100px
       height: 100px
       line-height: 100px
-      transition: width 500ms linear, height 500ms linear
+      transition: width 400ms linear, height 400ms linear, line-height 400ms linear
 
       &:hover
-        transition: width 500ms linear, height 500ms linear
+        transition: width 400ms linear, height 400ms linear, line-height 400ms linear
         width: 110px
         height: 110px
+        line-height: 110px
 
     &-small
       width: 70px
       height: 70px
       line-height: 70px
-      transition: width 500ms linear, height 500ms linear
+      transition: width 400ms linear, height 400ms linear, line-height 400ms linear
 
       &:hover
-        transition: width 500ms linear, height 500ms linear
+        transition: width 400ms linear, height 400ms linear, line-height 400ms linear
         width: 80px
         height: 80px
+        line-height: 80px
 
 @keyframes dotPendulum
   0%
@@ -242,13 +246,214 @@
   100%
     transform: translateX(0) translateY(0)
 
+@media screen and (max-width: $mediumBreakpoint)
+  .technologies-section-container
+    &-headline
+      font-size: 30px
+
+  .technologies-section-circle
+    font-size: 15px
+
+    &-large
+      width: 100px
+      height: 100px
+      line-height: 100px
+      transition: width 400ms linear, height 400ms linear, line-height 400ms linear
+
+      &:hover
+        transition: width 400ms linear, height 400ms linear, line-height 400ms linear
+        width: 115px
+        height: 115px
+        line-height: 115px
+
+    &-medium
+      width: 80px
+      height: 80px
+      line-height: 80px
+      transition: width 400ms linear, height 400ms linear, line-height 400ms linear
+
+      &:hover
+        transition: width 400ms linear, height 400ms linear, line-height 400ms linear
+        width: 90px
+        height: 90px
+        line-height: 90px
+
+    &-small
+      width: 60px
+      height: 60px
+      line-height: 60px
+      transition: width 400ms linear, height 400ms linear, line-height 400ms linear
+
+      &:hover
+        transition: width 400ms linear, height 400ms linear, line-height 400ms linear
+        width: 70px
+        height: 70px
+        line-height: 70px
 
 @media screen and (max-width: $smallBreakpoint)
-  .technologies-section
-    height: 200vh
+  .technologies-section-container
+    height: 100vh
 
     &-headline
       grid-row-start: 1
       grid-column-start: 1
       grid-row-end: 2
-      grid-column-end: 6
+      grid-column-end: 4
+
+  .technologies-section
+    grid-template-rows: 12% 22% 22% 22% 22%
+    grid-template-columns: 33.3% 33.3% 33.3%
+    background-color: white
+    height: 100%
+
+    &-circle
+      font-size: 13px
+      &-1
+        left: 10%
+        top: -10%
+        animation-iteration-count: infinite
+        animation-timing-function: ease-in-out
+        animation-name: dotPendulumLarge
+        animation-duration: 6s
+
+      &-2
+        top: -10%
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+        animation-name: dotPendulum
+        animation-duration: 5s
+
+      &-3
+        left: 0
+        top: 10%
+        animation-iteration-count: infinite
+        animation-timing-function: ease-in-out
+        animation-name: dotPendulum
+        animation-duration: 8s
+
+      &-4
+        left: 20%
+        top: -20%
+        animation-iteration-count: infinite
+        animation-timing-function: ease-in-out
+        animation-name: dotPendulumLarge
+        animation-duration: 5s
+
+      &-5
+        top: 20%
+        left: 10%
+        animation-iteration-count: infinite
+        animation-timing-function: ease-in-out
+        animation-name: dotPendulumLarge
+        animation-duration: 7s
+
+      &-6
+        left: 10%
+        top: 10%
+        animation-iteration-count: infinite
+        animation-timing-function: ease-in-out
+        animation-name: dotPendulumLarge
+        animation-duration: 9s
+
+      &-7
+        left: 40%
+        top: -20%
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+        animation-name: dotPendulum
+        animation-duration: 3s
+
+      &-8
+        top: -10%
+        left: 20%
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+        animation-name: dotPendulum
+        animation-duration: 10s
+
+      &-9
+        left: 20%
+        top: 10%
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+        animation-name: dotPendulum
+        animation-duration: 9s
+
+      &-10
+        top: 20%
+        left: 20%
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+        animation-name: dotPendulum
+        animation-duration: 7s
+
+      &-11
+        top: 0
+        left: 20%
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+        animation-name: dotPendulum
+        animation-duration: 5s
+
+      &-12
+        top: -20%
+        left: 50%
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+        animation-name: dotPendulum
+        animation-duration: 11s
+
+    &-grid-item
+      &-2
+        grid-row-start: 3
+        grid-column-start: 2
+        grid-row-end: 4
+        grid-column-end: 3
+
+      &-4
+        grid-row-start: 4
+        grid-column-start: 1
+        grid-row-end: 5
+        grid-column-end: 2
+
+      &-5
+        grid-row-start: 2
+        grid-column-start: 2
+        grid-row-end: 3
+        grid-column-end: 3
+
+      &-8
+        grid-row-start: 5
+        grid-column-start: 2
+        grid-row-end: 6
+        grid-column-end: 3
+
+      &-9
+        grid-row-start: 3
+        grid-column-start: 1
+        grid-row-end: 4
+        grid-column-end: 2
+
+      &-11
+        grid-row-start: 5
+        grid-column-start: 3
+        grid-row-end: 6
+        grid-column-end: 4
+
+      &-12
+        grid-row-start: 5
+        grid-column-start: 1
+        grid-row-end: 6
+        grid-column-end: 2
+
+@for $i from 0 to 12
+  //.technologies-section-grid-item:nth-child(#{$i + 1})
+  //  grid-row-start: auto
+  //  grid-column-start: auto
+  //  grid-row-end: auto
+  //  grid-column-end: auto
+
+  //.technologies-section-circle:nth-child(#{$i + 1})
+  //  top: 0
+  //  left: 0
+

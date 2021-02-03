@@ -118,3 +118,20 @@
   .projects-container-#{$i}
     transform: translateX($i * -100%)
     transition: transform 1s ease-in-out
+
+
+@media screen and (max-width: $smallBreakpoint)
+  .projects-container-inner
+    flex-wrap: wrap
+
+  .project-overview
+    width: 100%
+
+    &-inner
+      padding: 0
+
+  .projects-slider
+    width: 100%
+
+  .project-image-main
+    width: 100%
