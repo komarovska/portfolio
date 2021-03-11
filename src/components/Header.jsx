@@ -13,23 +13,31 @@ const Header = () => {
   const [position, setPosition] = useState("stage");
   useEffect(() => {
     const pageWrapper = document.querySelector(".page-wrapper");
+    const stageHeight = document.querySelector(".stage-container").clientHeight;
+    const technologiesHeight = document.querySelector(".technologies-section-container").clientHeight;
+    const experienceHeight = document.querySelector(".experience-section-container").clientHeight;
+    const projectsHeight = document.querySelector(".projects-container").clientHeight;
+    const contactsHeight = document.querySelector(".contacts-container").clientHeight;
     const runOnScroll = () => {
-      const stageHeight = document.querySelector(".stage-container").clientHeight;
-      const technologiesHeight = document.querySelector(".technologies-section-container").clientHeight;
-      const projectsHeight = document.querySelector(".projects-container").clientHeight;
       if (pageWrapper.scrollTop < stageHeight) {
         setPosition("stage");
       }
       if (pageWrapper.scrollTop >= stageHeight && pageWrapper.scrollTop < technologiesHeight + stageHeight) {
         setPosition("technologies");
       }
-      if (pageWrapper.scrollTop >= technologiesHeight + stageHeight) {
+      if (pageWrapper.scrollTop >= stageHeight + technologiesHeight && pageWrapper.scrollTop < technologiesHeight + stageHeight + experienceHeight) {
+        setPosition("experience");
+      }
+      if (pageWrapper.scrollTop >= technologiesHeight + stageHeight + experienceHeight && pageWrapper.scrollTop < technologiesHeight + stageHeight + experienceHeight + projectsHeight) {
         setPosition("projects")
+      }
+      if (pageWrapper.scrollTop >= technologiesHeight + stageHeight + experienceHeight + projectsHeight) {
+        setPosition("contacts")
       }
     };
     pageWrapper.addEventListener('scroll', runOnScroll);
     return () => pageWrapper.removeEventListener("scroll", runOnScroll);
-  }, [position]);
+  }, []);
 
   return (
     <StaticQuery

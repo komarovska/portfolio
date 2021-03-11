@@ -12,13 +12,20 @@ const Projects = () => {
     if (index === currentProject) {
       return "current";
     }
-    if ((index === currentProject + 1 || (index === 0 && currentProject === length - 1)) && !(index === length - 1 && currentProject === 0)) {
+    if (
+      (index === currentProject + 1 ||
+        (index === 0 && currentProject === length - 1)) &&
+      !(index === length - 1 && currentProject === 0)
+    ) {
       return "next";
     }
-    if (index === currentProject - 1 || (index === length - 1 && currentProject === 0)) {
+    if (
+      index === currentProject - 1 ||
+      (index === length - 1 && currentProject === 0)
+    ) {
       return "previous";
     }
-    return ''
+    return "";
   };
 
   return (
@@ -47,78 +54,82 @@ const Projects = () => {
       `}
       render={(data) => {
         return (
-          <div className={`projects-container projects-container-${currentProject}`}>
-            {data?.projectsSection?.projects?.map((item, index) => (
-              <div
-                className={`projects-container-inner projects-container-inner-${
-                  getClassname(index, data.projectsSection.projects.length)
-                } projects-container-inner-${index}`}
-              >
-                <div className="project-overview">
-                  <div className="project-overview-inner">
-                    <h1 className="project-name">{item.name}</h1>
-                    <div
-                      className="project-description"
-                      dangerouslySetInnerHTML={{ __html: item.description }}
-                    ></div>
-                    <div className="projects-slider">
-                      <p className="project-details-button">
-                        {data.projectsSection.detailsButton}
-                      </p>
-                      <p className="project-technologies-button">
-                        {data.projectsSection.technologiesButton}
-                      </p>
+          <a id="projects">
+            <div
+              className={`projects-container projects-container-${currentProject}`}
+            >
+              {data?.projectsSection?.projects?.map((item, index) => (
+                <div
+                  className={`projects-container-inner projects-container-inner-${getClassname(
+                    index,
+                    data.projectsSection.projects.length
+                  )} projects-container-inner-${index}`}
+                >
+                  <div className="project-overview">
+                    <div className="project-overview-inner">
+                      <h1 className="project-name">{item.name}</h1>
+                      <div
+                        className="project-description"
+                        dangerouslySetInnerHTML={{ __html: item.description }}
+                      ></div>
+                      <div className="projects-slider">
+                        <p className="project-details-button">
+                          {data.projectsSection.detailsButton}
+                        </p>
+                        <p className="project-technologies-button">
+                          {data.projectsSection.technologiesButton}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="projects-container-bottom-line">
-                    <div className="projects-container-headline">
-                      {data.projectsSection.headline}
-                    </div>
-                    <div className="project-arrows">
-                      <img
-                        className="project-arrows-icon project-arrows-icon-left"
-                        src="/assets/images/right-arrow.svg"
-                        onClick={() => {
-                          console.log("click");
-                          if (index > 0) {
-                            if (index > 1) {
-                            setCurrentProject(currentProject - 1);
-                            }
-                            setCurrentProject(currentProject - 1);
-                          } else {
+                    <div className="projects-container-bottom-line">
+                      <div className="projects-container-headline">
+                        {data.projectsSection.headline}
+                      </div>
+                      <div className="project-arrows">
+                        <img
+                          className="project-arrows-icon project-arrows-icon-left"
+                          src="/assets/images/right-arrow.svg"
+                          onClick={() => {
+                            if (index > 0) {
+                              if (index > 1) {
+                                setCurrentProject(currentProject - 1);
+                              }
+                              setCurrentProject(currentProject - 1);
+                            } else {
                               setCurrentProject(
                                 data.projectsSection.projects.length - 1
                               );
-                          }
-                        }}
-                      />
-                      <h1 className="project-name-small">{item.name}</h1>
-                      <img
-                        className="project-arrows-icon"
-                        src="/assets/images/right-arrow.svg"
-                        onClick={() => {
-                          if (
-                            data.projectsSection.projects.length - 1 >
-                            index
-                          ) {
-                            setCurrentProject(currentProject + 1);
-                          } else {
-                            setCurrentProject(0);
-                          }
-                        }}
-                      />
+                            }
+                          }}
+                        />
+                        <h1 className="project-name-small">{item.name}</h1>
+                        <img
+                          className="project-arrows-icon"
+                          src="/assets/images/right-arrow.svg"
+                          onClick={() => {
+                            if (
+                              data.projectsSection.projects.length - 1 >
+                              index
+                            ) {
+                              setCurrentProject(currentProject + 1);
+                            } else {
+                              setCurrentProject(0);
+                            }
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
+                  <picture className="project-image-main">
+                    <img src={item.mainImage.url} alt={item.mainImage.alt} />
+                  </picture>
+                  <div className="project-number-container">
+                    <p className="project-number">{`0${index + 1}`}</p>
+                  </div>
                 </div>
-                <picture className="project-image-main">
-                  <img src={item.mainImage.url} alt={item.mainImage.alt} />
-                </picture>
-                <div className="project-number-container">
-                  <p className="project-number">{`0${index + 1}`}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </a>
         );
       }}
     />

@@ -1,0 +1,29 @@
+.contact-form-container
+  width: 100%
+
+form
+  font-size: 18px
+  line-height: 24px
+  font-family: $secondary-font
+  color: black
+
+input:-webkit-autofill
+  -webkit-box-shadow: 0 0 0px 1000px yellow inset
+
+input:not(:placeholder-shown)
+  background: yellow
+
+input:focus
+  outline: none
+
+option:disabled
+  color: gray
+
+input
+  min-width: 240px
+  margin: 0 10px
+
+.submit-button-container
+  display: flex
+  justify-content: flex-start
+  margin-top: 20px

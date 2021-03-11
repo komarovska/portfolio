@@ -1,9 +1,11 @@
 .header
   display: flex
   z-index: 100
-  position: sticky
+  position: fixed
+  width: 100%
   top: 0
   cursor: auto !important
+  color: $black
 
   &-stage
     min-height: 100px
@@ -13,6 +15,10 @@
     color: $black
     box-shadow: $standard-box-shadow
 
+    .navItem
+      a::after
+        background-color: $bright-green
+
   &-technologies
     min-height: 50px
     background: #ffffff
@@ -21,6 +27,10 @@
     color: $black
     box-shadow: $reset-box-shadow
 
+    .navItem
+      a::after
+        background-color: $bright-blue
+
   &-projects
     min-height: 50px
     // background: $black
@@ -28,6 +38,34 @@
     // transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
     line-height: 50px
     box-shadow: $reset-box-shadow
+
+    .navItem
+      a::after
+        background-color: $bright-purple
+
+  &-experience
+    min-height: 50px
+    // background: $black
+    // color: #ffffff !important
+    // transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
+    line-height: 50px
+    box-shadow: $reset-box-shadow
+
+    .navItem
+      a::after
+        background-color: $accent-color
+
+  &-contacts
+    min-height: 50px
+    // background: $black
+    // color: #ffffff !important
+    // transition: min-height 1s linear, line-height 1s linear, box-shadow 1s linear
+    line-height: 50px
+    box-shadow: $reset-box-shadow
+
+    .navItem
+      a::after
+        background-color: yellow
 
 .navItems_container
   display: flex
@@ -47,7 +85,7 @@
 
   a::after
     content: ''
-    background-color: $accent-color
+    // background-color: $accent-color
     transition: width 0.8s
     -webkit-transition: width 0.8s
     -moz-transition: width 0.8s

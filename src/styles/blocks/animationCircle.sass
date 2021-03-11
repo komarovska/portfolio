@@ -73,6 +73,8 @@
   mix-blend-mode: difference
   color: #ffffff
   background: #000000
+  &::selection
+    background: $inverted-bright-green
 
 .stage_description
   position: absolute
@@ -85,6 +87,8 @@
   mix-blend-mode: difference
   background: black
   z-index: 2
+  &::selection
+    background: $inverted-bright-green
 
 .rectangle
   background: black

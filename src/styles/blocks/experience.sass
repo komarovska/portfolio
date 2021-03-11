@@ -1,0 +1,72 @@
+.experience-section-container
+  height: 100vh
+  font-family: $secondary-font
+  color: $black
+  padding: 100px 50px
+
+  &-inner
+    display: flex
+    justify-content: space-between
+    margin-top: 40px
+
+.experience-section-timeline
+  display: flex
+  width: 50%
+  flex-direction: row
+  justify-content: flex-start
+
+  &-items-container
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+  &-item
+    margin-top: 40px
+    cursor: pointer
+
+    &-active
+      color: $accent-color
+      transition: color 0.5s
+
+  &-item:last-child
+    margin-bottom: 40px
+
+  &-line
+    height: 100%
+    width: 2px
+    background-color: $black
+
+    &-container
+      height: 100%
+      margin: 0 25px
+      position: relative
+
+  &-circle
+    position: absolute
+    // top: 44px
+    left: -4px
+    width: 10px
+    height: 10px
+    background-color: $black
+    border-radius: 50%
+
+  &-description
+    opacity: 0
+    position: absolute
+    top: 0
+    left: 0
+    &-container
+      width: 50%
+      position: relative
+    &-active
+      opacity: 1
+      transition: opacity 0.6s ease-in
+      font-weight: 300
+
+.experience-section-accented-text
+  color: $accent-color
+
+@for $i from 0 to 10
+  .experience-section-timeline-circle-#{$i}
+     top: 44px + ($i * 64px)
+     transition: top 0.5s

@@ -2,3 +2,34 @@
   font-family: 'IBM Plex Mono', monospace
   color: $accent-color
 
+.headline-classic
+  font-family: $secondary-font
+  font-weight: bold
+  font-size: 40px
+  width: 100%
+  text-align: center
+  color: $black
+
+.description-classic
+  font-family: $secondary-font
+  text-align: center
+  color: $black
+  font-weight: 300
+
+input,
+textarea,
+select
+  border-width: 0 0 2px 0
+  border-color: $black
+  line-height: 24px
+  font-size: 18px
+  font-family: $secondary-font
+  padding: 10px
+
+  &::placeholder
+    line-height: 24px
+    font-size: 18px
+    font-family: $secondary-font
+
+  &::-internal-autofill-selected
+    background-color: #ffffff !important

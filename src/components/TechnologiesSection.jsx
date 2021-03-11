@@ -60,10 +60,11 @@ const TechnologiesSection = () => {
         }
       `}
       render={(data) => (
+        <a id="technologies">
         <section className="technologies-section-container">
           {/*<div className="technologies-section-container-cursor" />*/}
           <div className="technologies-section">
-            <div className="technologies-section-container-headline">
+            <div className="technologies-section-container-headline headline-classic">
               Technologies I use
             </div>
             {data.technologies.keyTechnologies.map((item, index) => (
@@ -119,6 +120,7 @@ const TechnologiesSection = () => {
             ))}
           </div>
         </section>
+        </a>
       )}
     />
   );

@@ -12,21 +12,6 @@
     height: 100%
     width: 100vw
 
-    //&-current
-    //  transform: translateX(0)
-    //  transition: transform 1.5s ease-out
-    //
-    //&-next
-    //  transform: translateX(100%)
-    //  transition: transform 1.5s ease-out
-    //
-    //&-previous
-    //  transform: translateX(-100%)
-    //  transition: transform 1.5s ease-out
-
-    //&-hidden
-    //  visibility: hidden
-
   &-bottom-line
     width: 100%
     display: flex
@@ -111,7 +96,7 @@
   flex-direction: column
   justify-content: flex-end
 
-@for $i from 0 to 5
+@for $i from 0 to 10
   .projects-container-inner:nth-child(#{$i + 1})
     transform: translateX($i * 100%)
 
@@ -135,3 +120,7 @@
 
   .project-image-main
     width: 100%
+
+  .project-name
+    text-transform: uppercase
+    font-size: 26px

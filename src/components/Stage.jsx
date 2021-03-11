@@ -11,8 +11,8 @@ const Stage = () => {
       query={graphql`
         query StageQuery {
           stage: datoCmsStage {
-            headline,
-            description,
+            headline
+            description
             avatar {
               url
               alt
@@ -21,15 +21,23 @@ const Stage = () => {
         }
       `}
       render={(data) => (
-        <div className="stage-container">
-          <picture className="avatar-container">
-            <img
-              src={data.stage.avatar.url}
-              alt="black and white picture of a girl"
+        <a id="about">
+          <div className="stage-container">
+            <div className="avatar-container">
+              <img
+                className="avatar"
+                src={data.stage.avatar.url}
+                alt="black and white picture of a girl"
+              />
+            </div>
+            <AnimationCircle
+              content={{
+                headline: data.stage.headline,
+                description: data.stage.description,
+              }}
             />
-          </picture>
-          <AnimationCircle content={{ headline: data.stage.headline, description: data.stage.description }} />
-        </div>
+          </div>
+        </a>
       )}
     />
   );
@@ -43,9 +51,9 @@ Stage.propTypes = {
       avatar: {
         url: PropTypes.String,
         alt: PropTypes.String,
-      }
+      },
     },
     headline: PropTypes.String,
     description: PropTypes.String,
-  }
+  },
 };

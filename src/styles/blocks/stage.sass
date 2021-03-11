@@ -1,18 +1,25 @@
 .stage-container
   width: 100%
+  height: 100vh
   display: flex
   overflow-x: hidden
+  padding-top: 100px
 
 .avatar-container
   display: flex
   width: 25%
   padding-left: 30px
   margin: auto
+  height: 100%
+  align-items: center
+  justify-content: center
+
+.avatar
+  align-self: center
 
 @media screen and (max-width: $smallBreakpoint)
   .stage-container
     flex-direction: column-reverse
-    height: auto
 
   .avatar-container
     width: 70%
