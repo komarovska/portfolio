@@ -18,10 +18,10 @@ const ContactForm = (props) => {
         method="post"
         action="https://www.flexyform.com/f/0cd65ef995654029ff5c20784aa4c54aa5a56259"
       >
-        <div>
-          Hi, my name is
+        <div className="contact-form-text">
+          <span>Hi, my name is</span>
           <input required type="text" name="fullname" placeholder="your name" />
-          and I would like to talk about <input required type="text" name="topic" placeholder="topic" />
+          <span>and I would like to talk about</span> <input required type="text" name="topic" placeholder="topic" />
           {/*<select>*/}
           {/*  <option disabled selected value>*/}
           {/*    {" "}*/}
@@ -41,14 +41,14 @@ const ContactForm = (props) => {
           {/*  </option>*/}
           {/*</select>*/}
           <br />
-          You can reach me at
+          <span>You can reach me at</span>
           <input
             required
             type="email"
             name="email"
             placeholder="your email"
           />{" "}
-          or <input required type="tel" name="phone" placeholder="your phone" />
+          <span>or</span> <input required type="tel" name="phone" placeholder="your phone" />
           {/*. I also would like to say*/}
           {/*<textarea*/}
           {/*  name="message"*/}

@@ -29,12 +29,18 @@
     margin: auto
     padding: 0 100px
 
+
 .project-name
   text-transform: uppercase
   font-size: 40px
+  &::selection
+    background-color: $bright-purple
 
 .project-description
   font-weight: 300
+  & > p > span, & > p
+    &::selection
+      background-color: $bright-purple
 
 .projects-slider
   display: flex
@@ -47,9 +53,13 @@
 
 .project-details-button
   cursor: pointer
+  &::selection
+    background-color: $bright-purple
 
 .project-technologies-button
   cursor: pointer
+  &::selection
+    background-color: $bright-purple
 
 .project-image-main
   width: 30%
@@ -73,6 +83,9 @@
 .projects-container-headline
   text-transform: uppercase
 
+  &::selection
+    background-color: $bright-purple
+
 .project-arrows
   display: flex
   justify-content: space-between
@@ -90,11 +103,18 @@
 .project-name-small
   padding: 0 20px
 
+  &::selection
+    background-color: $bright-purple
+
 .project-number-container
   padding: 20px
   display: flex
   flex-direction: column
   justify-content: flex-end
+
+.project-number
+  &::selection
+    background-color: $bright-purple
 
 @for $i from 0 to 10
   .projects-container-inner:nth-child(#{$i + 1})
@@ -106,6 +126,9 @@
 
 
 @media screen and (max-width: $smallBreakpoint)
+  .projects-container
+    height: 200vh
+
   .projects-container-inner
     flex-wrap: wrap
 

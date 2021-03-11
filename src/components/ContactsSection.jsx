@@ -9,8 +9,8 @@ const ContactsSection = (props) => {
     <a id="contacts">
     <section className="contacts-section-container">
       <div className="contacts-section-headline-container">
-        <h1 className="headline-classic">Contact me</h1>
-        <p className="description-classic">Got any questions or cooperation suggestions? Let's get in touch!</p>
+        <h1 className="headline-classic contacts-section-headline">Contact me</h1>
+        <p className="description-classic contacts-section-description">Got any questions or cooperation suggestions? Let's get in touch!</p>
       </div>
       <div className="contacts-section-inner">
         <ContactForm />

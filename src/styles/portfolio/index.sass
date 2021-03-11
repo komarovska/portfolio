@@ -33,3 +33,17 @@ select
 
   &::-internal-autofill-selected
     background-color: #ffffff !important
+
+@media screen and (max-width: $extraSmallBreakpoint)
+  input,
+  textarea,
+  select
+    font-size: 16px
+    padding: 8px 8px 8px 0
+
+    &::placeholder
+      line-height: 20px
+      font-size: 16px
+
+  .headline-classic
+    font-size: 28px

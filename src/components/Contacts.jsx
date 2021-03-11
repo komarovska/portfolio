@@ -8,7 +8,7 @@ const Contacts = (props) => {
       {/*<h2>Get in touch</h2>*/}
       {/*<p>Feel free to contact me or fill in the form and I'll get back to you shortly.</p>*/}
       <div className="contacts-container-inner">
-        <div>
+        <div className="social-links-container">
           <div className="social-icons-container">
             <img
               className="social-icon"
@@ -22,13 +22,13 @@ const Contacts = (props) => {
           </div>
           +380971638551
         </div>
-        <div>
+        <div className="social-links-container">
           <div className="social-icons-container">
             <img className="social-icon" src="/assets/images/mail-icon.png" />
           </div>
           <a href="mailto:vkomarovska98@gmail.com">vkomarovska98@gmail.com</a>
         </div>
-        <div>
+        <div className="social-links-container">
           <div className="social-icons-container">
             <img
               className="social-icon"
@@ -39,7 +39,7 @@ const Contacts = (props) => {
             vkomarovska
           </a>
         </div>
-        <div>
+        <div className="social-links-container">
           <div className="social-icons-container">
             <img
               className="social-icon"
@@ -48,7 +48,7 @@ const Contacts = (props) => {
           </div>
           <a href="https://www.facebook.com/vkomarovska/">vkomarovska</a>
         </div>
-        <div>
+        <div className="social-links-container">
           <div className="social-icons-container">
             <img className="social-icon" src="/assets/images/github-icon.png" />
           </div>
