@@ -8,6 +8,7 @@
   &-inner
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
 
 .social-icons-container
   max-width: 100px
@@ -19,19 +20,41 @@
     &::selection
       background-color: yellow
 
+    &:hover
+      background-color: yellow
+
 .social-icon
   width: 30px
   height: 30px
   margin-right: 10px
 
+.social-links-container
+  padding: 5px
+
+@media screen and (max-width: $largeBreakpoint)
+  .contacts-container
+    margin-top: 40px
+
+  .social-links-container
+    padding: 5px
+    font-size: 16px
+
+@media screen and (max-width: $mediumBreakpoint)
+  .contacts-container
+    margin-top: 30px
+
+    &-inner
+      justify-content: flex-start
+
 @media screen and (max-width: $extraSmallBreakpoint)
 
   .contacts-container
-    margin-top: 40px
+    margin-top: 20px
     padding-bottom: 40px
 
     &-inner
       flex-direction: column
+      justify-content: space-between
 
   .social-links-container
     display: flex

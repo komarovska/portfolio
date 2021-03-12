@@ -116,6 +116,9 @@
   &::selection
     background-color: $bright-purple
 
+  &-mobile
+    display: none
+
 @for $i from 0 to 10
   .projects-container-inner:nth-child(#{$i + 1})
     transform: translateX($i * 100%)
@@ -127,7 +130,13 @@
 
 @media screen and (max-width: $smallBreakpoint)
   .projects-container
-    height: 200vh
+    height: 100vh
+
+    &-headline
+      display: none
+
+    &-bottom-line
+      justify-content: flex-start
 
   .projects-container-inner
     flex-wrap: wrap
@@ -137,13 +146,24 @@
 
     &-inner
       padding: 0
+      margin: 10px 0 20px
 
   .projects-slider
     width: 100%
 
   .project-image-main
     width: 100%
+    height: 80%
+    flex-direction: row
+    padding: 0 20px
 
   .project-name
     text-transform: uppercase
     font-size: 26px
+
+  .project-number-container
+    display: none
+
+  .project-number-mobile
+    display: block
+    padding-right: 30px

@@ -85,6 +85,7 @@ const Projects = () => {
                       <div className="projects-container-headline">
                         {data.projectsSection.headline}
                       </div>
+                      <p className="project-number-mobile">{`0${index + 1}`}</p>
                       <div className="project-arrows">
                         <img
                           className="project-arrows-icon project-arrows-icon-left"

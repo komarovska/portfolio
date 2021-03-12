@@ -110,3 +110,36 @@
   .experience-section-timeline-circle-#{$i}
      top: 44px + ($i * 64px)
      transition: top 0.5s
+
+@media screen and (max-width: $smallBreakpoint)
+  .experience-section-container
+    padding: 20px
+
+    &-inner
+      flex-wrap: wrap
+
+  .experience-section
+    &-skills-container
+      width: 28%
+
+    &-timeline
+      &-line
+        &-container
+          margin: 0 15px
+
+      &-description
+        &-container
+          width: 67%
+
+  @for $i from 0 to 10
+    .experience-section-timeline-circle-#{$i}
+      top: 54px + ($i * 90px)
+      transition: top 0.5s
+
+@media screen and (max-width: $smallestBreakpoint)
+  .experience-section
+    &-timeline
+      &-description
+        &-container
+          width: 60%
+
