@@ -52,7 +52,7 @@ const Experience = (props) => {
                       className={`experience-section-timeline-circle experience-section-timeline-circle-${activeElement}`}
                     />
                   </div>
-                <div className="experience-section-timeline-items-container">
+                <div className="experience-section-timeline-items-container experience-section-companies-names">
                   {data.experience.timeline.map((timelineItem, index) => {
                     return (
                       <div
@@ -85,7 +85,7 @@ const Experience = (props) => {
                         "experience-section-timeline-description-active"
                       }`}
                     >
-                      <p
+                      <div
                         dangerouslySetInnerHTML={{
                           __html: timelineItem.activityDescription,
                         }}
