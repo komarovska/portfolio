@@ -3,6 +3,9 @@ import React from "react";
 import "../styles/index.sass";
 
 const ContactForm = (props) => {
+  const [icon, setIcon] = React.useState(
+    "/assets/images/right-arrow-white.svg"
+  );
   const formStyle = {
     textAlign: "left",
   };
@@ -21,7 +24,8 @@ const ContactForm = (props) => {
         <div className="contact-form-text">
           <span>Hi, my name is</span>
           <input required type="text" name="fullname" placeholder="your name" />
-          <span>and I would like to talk about</span> <input required type="text" name="topic" placeholder="topic" />
+          <span>and I would like to talk about</span>{" "}
+          <input required type="text" name="topic" placeholder="topic" />
           {/*<select>*/}
           {/*  <option disabled selected value>*/}
           {/*    {" "}*/}
@@ -48,7 +52,8 @@ const ContactForm = (props) => {
             name="email"
             placeholder="your email"
           />{" "}
-          <span>or</span> <input required type="tel" name="phone" placeholder="your phone" />
+          <span>or</span>{" "}
+          <input required type="tel" name="phone" placeholder="your phone" />
           {/*. I also would like to say*/}
           {/*<textarea*/}
           {/*  name="message"*/}
@@ -57,9 +62,16 @@ const ContactForm = (props) => {
           {/*></textarea>*/}
         </div>
         <div className="submit-button-container">
-          <button type="submit" className="button special">
+          <button
+            type="submit"
+            className="button special"
+            onMouseEnter={() => setIcon("/assets/images/right-arrow.svg")}
+            onMouseLeave={() =>
+              setIcon("/assets/images/right-arrow-white.svg")
+            }
+          >
             <span className="button-label">Send</span>
-            <img className="button-arrow-icon" src="/assets/images/right-arrow-white.svg" alt="arrow" />
+            <img className="button-arrow-icon" src={icon} alt="arrow" />
           </button>
         </div>
       </form>
