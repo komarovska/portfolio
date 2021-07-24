@@ -4,9 +4,12 @@ import AnimationCircle from "./AnimationCircle";
 
 import "../styles/index.sass";
 import { graphql, StaticQuery } from "gatsby";
+import ProjectDetailsPopup from "./ProjectDetailsPopup";
 
 const Projects = () => {
   const [currentProject, setCurrentProject] = useState(0);
+  const [detailsPopupOpened, toggleDetailsPopup] = useState(false);
+  const [technologiesPopupOpened, toggleTechnologiesPopup] = useState(false);
 
   const getClassname = (index, length) => {
     if (index === currentProject) {
@@ -48,6 +51,9 @@ const Projects = () => {
                 url
                 alt
               }
+              projectTechnologies {
+                name
+              }
             }
           }
         }
@@ -73,10 +79,13 @@ const Projects = () => {
                         dangerouslySetInnerHTML={{ __html: item.description }}
                       ></div>
                       <div className="projects-slider">
-                        <p className="project-details-button">
+                        <p
+                          className="project-details-button"
+                          onClick={() => toggleDetailsPopup(!detailsPopupOpened)}
+                        >
                           {data.projectsSection.detailsButton}
                         </p>
-                        <p className="project-technologies-button">
+                        <p className="project-technologies-button" onClick={() => toggleTechnologiesPopup(!technologiesPopupOpened)}>
                           {data.projectsSection.technologiesButton}
                         </p>
                       </div>
@@ -127,6 +136,21 @@ const Projects = () => {
                   <div className="project-number-container">
                     <p className="project-number">{`0${index + 1}`}</p>
                   </div>
+                  {detailsPopupOpened && index === currentProject && (
+                    <ProjectDetailsPopup
+                      onClose={toggleDetailsPopup}
+                      headline={item.name}
+                      descriptionDetailed={item.descriptionDetailed}
+                      additionalImages={item.additionalImages}
+                    />
+                  )}
+                  {technologiesPopupOpened && index === currentProject && (
+                    <ProjectDetailsPopup
+                      onClose={toggleTechnologiesPopup}
+                      headline={item.name}
+                      technologies={item.projectTechnologies}
+                    />
+                  )}
                 </div>
               ))}
             </div>
@@ -157,6 +181,9 @@ Projects.propTypes = {
           url: PropTypes.string,
           alt: PropTypes.string,
         },
+        projectTechnologies: {
+          name: PropTypes.string
+        }
       },
     },
   },

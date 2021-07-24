@@ -1,0 +1,73 @@
+.project-details-popup
+  background: #ffffff
+  width: 60%
+  height: 80%
+  border: 6px solid $black
+  position: relative
+  overflow-y: scroll
+  padding: 20px
+  font-family: $secondary-font
+  color: $black
+  font-weight: 300
+
+  h3
+    font-weight: bold
+    text-transform: uppercase
+    margin-bottom: 10px
+
+  &-overlay
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+
+    bottom: 0
+    background: rgba(0, 0, 0, 0.35)
+    z-index: 9998
+
+    display: flex
+    align-items: center
+    justify-content: center
+
+  &-cross-icon
+    width: 30px
+    height: 30px
+    position: absolute
+    top: 15px
+    right: 15px
+    cursor: pointer
+
+  &-image
+    width: 48%
+    // height: 400px
+    object-fit: contain
+
+    &-gallery
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+      flex-wrap: wrap
+      margin-top: 20px
+
+  &-technologies
+
+    h5
+      font-weight: 400
+
+    ul
+      margin-top: 20px
+      list-style: disc
+      padding-left: 40px
+
+@media screen and (max-width: $smallBreakpoint)
+  .project-details-popup
+    width: 90%
+    height: 87%
+    font-size: 14px
+
+    &-cross-icon
+      width: 20px
+      height: 20px
+
+    &-image
+      width: 95%

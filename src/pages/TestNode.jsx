@@ -22,7 +22,7 @@ export default TestNode;
 
 export const query = graphql`
   query TestNodeQuery {
-    testNode: datoCmsTestNode {
+    testNode: datoCmsTestNode { 
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
