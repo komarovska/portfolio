@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => (
             <Link to={`/works/${work.slug}`} className="card__image">
               <Img fluid={work.coverImage.fluid} />
             </Link>
-            <figcaption className="card__caption">
+            <figcaption className="card__capion">
               <h6 className="card__title">
                 <Link to={`/works/${work.slug}`}>{work.title}</Link>
               </h6>
