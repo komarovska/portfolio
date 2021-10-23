@@ -1,5 +1,5 @@
 .experience-section-container
-  height: 100vh
+  min-height: 100vh
   font-family: $secondary-font
   color: $black
   padding: 100px 50px
@@ -90,6 +90,9 @@
     top: 0
     left: 0
 
+    & > div
+      overflow: scroll
+
     &-container
       width: 50%
       position: relative
@@ -115,6 +118,8 @@
      transition: top 0.5s
 
 @media screen and (max-width: $smallBreakpoint)
+  .experience-section-container
+    min-height: 160vh
   .experience-section-container
     padding: 20px
 

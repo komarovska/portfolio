@@ -5,59 +5,63 @@ import "../styles/index.sass";
 const Contacts = (props) => {
   return (
     <div className="contacts-container">
-      {/*<h2>Get in touch</h2>*/}
-      {/*<p>Feel free to contact me or fill in the form and I'll get back to you shortly.</p>*/}
       <div className="contacts-container-inner">
         <div className="social-links-container">
-          <div className="social-icons-container">
-            <img
-              className="social-icon"
-              src="/assets/images/telegram-icon.png"
-            />
-            <img
-              className="social-icon"
-              src="/assets/images/whatsapp-icon-black.svg"
-            />
-            <img />
-          </div>
-          +380971638551
+          <a href="https://t.me/vi_lavender">
+            <div className="social-icons-container">
+              <img
+                className="social-icon"
+                src="/assets/images/telegram-icon.png"
+              />
+              <img
+                className="social-icon"
+                src="/assets/images/whatsapp-icon-black.svg"
+              />
+              <img />
+            </div>
+            <span>+380971638551</span>
+          </a>
         </div>
         <div className="social-links-container">
-          <div className="social-icons-container">
-            <img className="social-icon" src="/assets/images/mail-icon.png" />
-          </div>
-          <a href="mailto:vkomarovska98@gmail.com">vkomarovska98@gmail.com</a>
+          <a href="mailto:vkomarovska98@gmail.com">
+            <div className="social-icons-container">
+              <img className="social-icon" src="/assets/images/mail-icon.png" />
+            </div>
+            <span>vkomarovska98@gmail.com</span>
+          </a>
         </div>
         <div className="social-links-container">
-          <div className="social-icons-container">
-            <img
-              className="social-icon"
-              src="/assets/images/linkedin-logo.png"
-            />
-          </div>
           <a href="https://www.linkedin.com/in/vkomarovska/" target="_blank">
-            vkomarovska
+            <div className="social-icons-container">
+              <img
+                className="social-icon"
+                src="/assets/images/linkedin-logo.png"
+              />
+            </div>
+            <span>vkomarovska</span>
           </a>
         </div>
         <div className="social-links-container">
-          <div className="social-icons-container">
-            <img
-              className="social-icon"
-              src="/assets/images/facebook-icon.png"
-            />
-          </div>
-          <a href="https://www.facebook.com/vkomarovska/">vkomarovska</a>
+          <a href="https://www.facebook.com/vkomarovska/">
+            <div className="social-icons-container">
+              <img
+                className="social-icon"
+                src="/assets/images/facebook-icon.png"
+              />
+            </div>
+            <span>vkomarovska</span>
+          </a>
         </div>
         <div className="social-links-container">
-          <div className="social-icons-container">
-            <img className="social-icon" src="/assets/images/github-icon.png" />
-          </div>
           <a href="https://github.com/viktoriiakomarovska">
-            viktoriiakomarovska
+            <div className="social-icons-container">
+              <img
+                className="social-icon"
+                src="/assets/images/github-icon.png"
+              />
+            </div>
+            <span>viktoriiakomarovska</span>
           </a>
-          {/*<a href="https://github.com/komarovska">*/}
-          {/*  komarovska*/}
-          {/*</a>*/}
         </div>
       </div>
     </div>

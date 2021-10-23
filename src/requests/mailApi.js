@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios'
 
 export const sendContactMail = async (
   recipientMail,
@@ -11,19 +11,19 @@ export const sendContactMail = async (
     name,
     senderMail,
     content,
-  };
+  }
 
   try {
     const res = await axios({
-      method: "post",
-      url: "/api/contact",
+      method: 'post',
+      url: '/api/contact',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       data,
-    });
-    return res;
+    })
+    return res
   } catch (error) {
-    return error;
+    return error
   }
-};
+}
