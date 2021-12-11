@@ -8,7 +8,6 @@ import ContactsSection from "../components/ContactsSection";
 import Experience from "../components/Experience";
 
 const Index = ({ data: { testNode } }) => (
-// const TestNode = () => (
   <PageWrapper>
     <Stage />
     <TechnologiesSection />
