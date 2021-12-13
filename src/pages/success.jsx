@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../styles/index.sass";
+
 const Success = () => {
   const [icon, setIcon] = React.useState(
     "/assets/images/right-arrow-white.svg"
